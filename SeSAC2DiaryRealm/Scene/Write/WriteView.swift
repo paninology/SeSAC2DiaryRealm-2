@@ -46,12 +46,21 @@ class WriteView: BaseView {
     let sampleButton: UIButton = {
         let view = UIButton()
         view.backgroundColor = .green
+        view.setTitle("save", for: .normal)
+        return view
+    }()
+    
+    let cancelButton: UIButton = {
+        let view = UIButton()
+        view.setImage(UIImage(systemName: "xmark"), for: .normal)
+        view.tintColor = Constants.BaseColor.text
+        view.backgroundColor = Constants.BaseColor.point
         return view
     }()
     
     // MARK: - Methods
     override func configureUI() {
-        [userImageView, titleTextField, dateTextField, contentTextView, searchImageButton, sampleButton].forEach {
+        [userImageView, titleTextField, dateTextField, contentTextView, searchImageButton, sampleButton, cancelButton].forEach {
             self.addSubview($0)
         }
     }
@@ -95,6 +104,11 @@ class WriteView: BaseView {
             make.trailing.equalTo(userImageView.snp.trailing).offset(-12)
             make.bottom.equalTo(userImageView.snp.bottom).offset(-12)
             make.width.height.equalTo(50)
+        }
+        cancelButton.snp.makeConstraints { make in
+            make.top.equalTo(self.safeAreaLayoutGuide).offset(8)
+            make.leadingMargin.equalTo(8)
+            make.width.height.equalTo(44)
         }
     }
 

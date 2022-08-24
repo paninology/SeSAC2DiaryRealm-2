@@ -17,9 +17,9 @@ struct ImageDummy {
 //        Sample(url: "https://images.unsplash.com/photo-1657299156653-d3c0147ba3ee?q=75&fm=jpg"),
 //        Sample(url: "https://images.unsplash.com/photo-1661074670187-3237f445f10d?q=75&fm=jpg"),
 //        Sample(url: "https://images.unsplash.com/photo-1661058342020-b9da482750e4?q=75&fm=jpg"),
-//        Sample(url: "https://images.unsplash.com/photo-1657299156271-d5a435dd65b0?q=75&fm=jpg"),
-//        Sample(url: "https://images.unsplash.com/photo-1657299156538-e08595d224ca?q=75&fm=jpg"),
-//        Sample(url: "https://images.unsplash.com/photo-1661091856780-88d7d4091c83?q=75&fm=jpg")
+        Sample(url: "https://images.unsplash.com/photo-1657299156271-d5a435dd65b0?q=75&fm=jpg"),
+        Sample(url: "https://images.unsplash.com/photo-1657299156538-e08595d224ca?q=75&fm=jpg"),
+        Sample(url: "https://images.unsplash.com/photo-1661091856780-88d7d4091c83?q=75&fm=jpg")
     ]
     
 }

@@ -13,15 +13,40 @@ class ImageSearchView: BaseView {
         let view = UICollectionView(frame: .zero, collectionViewLayout: imageCollectionViewLayout())
         return view
     }()
+    
+//    let cancelButton: UIButton = {
+//        let view = UIButton()
+//        view.backgroundColor = .brown
+//        view.setTitle("cancel", for: .normal)
+//        return view
+//    }()
+//
+//    let saveButton: UIButton = {
+//        let view = UIButton()
+//        view.backgroundColor = .brown
+//        view.setTitle("save", for: .normal)
+//        return view
+//    }()
      
     override func configureUI() {
-        self.addSubview(collectionView)
+  
+        [collectionView].forEach {self.addSubview($0) }
     }
     
     override func setConstraints() {
         collectionView.snp.makeConstraints { make in
             make.edges.equalTo(self.safeAreaLayoutGuide)
         }
+        
+//        saveButton.snp.makeConstraints { make in
+//            make.top.equalTo(8)
+//            make.trailing.equalTo(-8)
+//            make.width.height.equalTo(44)
+//        }
+//        cancelButton.snp.makeConstraints { make in
+//            make.top.leading.equalTo(8)
+//            make.width.height.equalTo(44)
+//        }
     }
     
     static func imageCollectionViewLayout() -> UICollectionViewFlowLayout {

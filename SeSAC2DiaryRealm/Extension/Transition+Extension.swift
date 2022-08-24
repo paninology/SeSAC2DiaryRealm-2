@@ -10,8 +10,9 @@ import UIKit
 extension UIViewController {
     
     enum TransitionStyle {
-        case present
-        case presentFullScreen
+        case present //네비게이션 없이
+        case presentNavigation //네비게이션 임베드 프레젠드
+        case presentFullNavigation //네ㅇ비게이션 풀스크린
         case push
     }
     
@@ -20,12 +21,15 @@ extension UIViewController {
         switch transitionStyle {
         case .present:
             self.present(viewController, animated: true)
+        case .presentNavigation:
+            let navi = UINavigationController(rootViewController: viewController)
+            self.present(navi, animated: true)
         case .push:
             self.navigationController?.pushViewController(viewController, animated: true)
-        case .presentFullScreen:
-            let vc = viewController
-            vc.modalPresentationStyle = .overFullScreen
-            self.present(vc, animated: true)
+        case .presentFullNavigation:
+            let navi = UINavigationController(rootViewController: viewController)
+            navi.modalPresentationStyle = .fullScreen
+            self.present(navi, animated: true)
         }
     }
     
